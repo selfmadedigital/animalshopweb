@@ -1,37 +1,53 @@
+<header id="header">
+  <div class="header-area container">
+    <div class="row">
+      <div class="col-xs-12 hidden visible-xs">
+        <ul class="list-unstyled social-network text-center">
+          <li><a href="mailto:petty@support.com"><i class="icon-message" aria-hidden="true"></i></a></li>
+          <li><a href="tell:1345678000"><i class="icon-phone-call" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="icon-user" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="icon-cart" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-6 hidden-xs">
+      </div>
+      <div class="col-xs-12 col-sm-6 hidden-xs">
+        <div class="social-list">
+          <ul class="list-unstyled account-cart">
+            <li><a href="#"><i class="icon-user"></i><span class="hidden-xs">Account</span></a></li>
+            <li><a href="#"><i class="icon-cart"></i><span class="hidden-xs">Cart</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="logo pull-left hidden visible-xs">
+          <a href="index.html"><img class="img-responsive" src="/assets/images/logo.png" alt="PetShop"></a>
+        </div>
+        <a href="#" class="nav-opener pull-right hidden visible-xs"><i class="fa fa-bars"></i></a>
+        <nav id="nav">
+          <ul class="list-unstyled text-uppercase menu-left">
+            <li><a href="/products">Products</a></li>
+            <li *ngIf="isLoggedIn"><a href="/orders">Orders</a></li>
+            <li *ngIf="showProductManagment"><a href="/manage">Administration</a></li>
+            <li class="logo hidden-xs"><a href="index.html"><img class="img-responsive" src="/assets/images/logo.png" alt="PetShop"></a></li>
+            <li *ngIf="!isLoggedIn"><a href="/register">Registration</a></li>
+            <li *ngIf="!isLoggedIn"><a href="/login">Login</a></li>
+            <li *ngIf="isLoggedIn"><a href>Logged: {{ username }}</a></li>
+            <li *ngIf="isLoggedIn"><a href (click)="logout()">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
 <div id="app">
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">AnimalShop</a>
-    <ul class="navbar-nav mr-auto" routerLinkActive="active">
-      <li class="nav-item">
-        <a href="/products" class="nav-link" routerLink="products">Produkty</a>
-      </li>
-      <li class="nav-item" *ngIf="isLoggedIn">
-        <a href="/orders" class="nav-link" routerLink="orders">Objednávky</a>
-      </li>
-      <li class="nav-item" *ngIf="showProductManagment">
-        <a href="/productmanagment" class="nav-link" routerLink="productmanagment">Pridať produkt</a>
-      </li>
-    </ul>
-
-    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
-      <li class="nav-item">
-        <a href="/register" class="nav-link" routerLink="register">Register</a>
-      </li>
-      <li class="nav-item">
-        <a href="/login" class="nav-link" routerLink="login">Login</a>
-      </li>
-    </ul>
-
-    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
-      <li class="nav-item">
-        <span class="nav-link">Logged in: {{ username }}</span>
-      </li>
-      <li class="nav-item">
-        <a href class="nav-link" (click)="logout()">LogOut</a>
-      </li>
-    </ul>
-  </nav>
-
   <div class="container">
     <router-outlet></router-outlet>
   </div>

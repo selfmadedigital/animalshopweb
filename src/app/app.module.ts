@@ -13,6 +13,7 @@ import { RegisterComponent } from './register/register.component';
 import { OrderListComponent } from './order-list/order-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductManagmentComponent } from './product-managment/product-managment.component';
+import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { ProductManagmentComponent } from './product-managment/product-managment
     HttpClientModule,
     FormsModule
   ],
-  providers: [UserService],
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

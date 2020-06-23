@@ -6,6 +6,7 @@ import {RegisterComponent} from './register/register.component';
 import {LoginComponent} from './login/login.component';
 import {OrderListComponent} from './order-list/order-list.component';
 import {ProductDetailComponent} from './product-detail/product-detail.component';
+import {ProductManagmentComponent} from './product-managment/product-managment.component';
 
 const routes: Routes = [
   { path: 'adduser', component: UserFormComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'orders', component: OrderListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'manage', component: ProductManagmentComponent },
 
 ];
 
