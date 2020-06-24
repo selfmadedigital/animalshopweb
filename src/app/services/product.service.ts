@@ -23,7 +23,7 @@ export class ProductService {
     return this.http.get<Product>(this.productsUrl + '/' + id);
   }
 
-  public save(product: Product) {
+  public create(product: Product) {
     return this.http.post<User>(this.productsUrl, product);
   }
 }

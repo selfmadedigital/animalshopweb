@@ -254,7 +254,7 @@ a:hover, a:focus, a:active {
 	overflow: hidden; 
 	padding: 70px 0 50px;
 }
-.welcome-sec.style1{ padding-bottom: 80px; padding-top:  }
+.welcome-sec.style1{ padding-bottom: 80px;   }
 .header{overflow: hidden;}
 .welcome-sec .header.header-dark{
 	padding: 89px 0 8px;
@@ -1898,7 +1898,7 @@ a:hover, a:focus, a:active {
   padding: 0;
   width: 9px;
   height: 9px;
-  opacity: -1;
+  opacity: 0;
   visibility: hidden;
   margin: 3px 0 0;
   text-align: center;
