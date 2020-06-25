@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import {ProductService} from '../services/product.service';
+import {CategoriesService} from '../services/categories.service';
+import {Category} from '../models/category';
 
 @Component({
   selector: 'app-product-managment',
@@ -8,13 +10,17 @@ import {ProductService} from '../services/product.service';
   styleUrls: ['./product-managment.component.scss']
 })
 export class ProductManagmentComponent implements OnInit {
+  categories: Category[];
   form: any = {};
   isSuccessful = false;
   errorMessage = '';
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private categoriesService: CategoriesService) { }
 
   ngOnInit() {
+    this.categoriesService.findAll().subscribe(data => {
+      this.categories = data;
+    });
   }
 
   onSubmit() {

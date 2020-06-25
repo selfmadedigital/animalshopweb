@@ -1,6 +1,8 @@
+import {Category} from './category';
+
 export class Product {
   id: string;
-  category: string;
+  category: Category;
   name: string;
   price: number;
   description: string;

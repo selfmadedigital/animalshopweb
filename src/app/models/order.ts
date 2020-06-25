@@ -5,4 +5,9 @@ export class Order {
   product: Product;
   quantity: number;
   datetime: string;
+
+  constructor(private productIn: Product, private quantityIn: number) {
+    this.product = productIn;
+    this.quantity = quantityIn;
+  }
 }

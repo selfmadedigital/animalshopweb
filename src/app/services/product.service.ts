@@ -13,6 +13,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) {
     this.productsUrl = 'https://animalshopapi.selfmade.site/products';
+    // this.productsUrl = 'http://localhost:8080/products';
   }
 
   public findAll(): Observable<Product[]> {
@@ -20,7 +21,7 @@ export class ProductService {
   }
 
   public findById(id: string): Observable<Product> {
-    return this.http.get<Product>(this.productsUrl + '/' + id);
+    return this.http.get<Product>(this.productsUrl + '?id=' + id);
   }
 
   public create(product: Product) {

@@ -8,74 +8,76 @@
       novalidate
     >
       <div class="form-group">
-        <label for="username">Username</label>
+        <label for="name">Name</label>
         <input
           type="text"
           class="form-control"
-          name="username"
-          [(ngModel)]="form.username"
+          name="name"
+          [(ngModel)]="form.name"
           required
-          minlength="3"
-          maxlength="20"
-          #username="ngModel"
+          maxlength="100"
+          #name="ngModel"
         />
-        <div class="alert-danger" *ngIf="f.submitted && username.invalid">
-          <div *ngIf="username.errors.required">Username is required</div>
-          <div *ngIf="username.errors.minlength">
-            Username must be at least 3 characters
-          </div>
-          <div *ngIf="username.errors.maxlength">
-            Username must be at most 20 characters
+        <div class="alert-danger" *ngIf="f.submitted && name.invalid">
+          <div *ngIf="name.errors.required">Name is required</div>
+          <div *ngIf="name.errors.maxlength">
+            Name must be at most 100 characters
           </div>
         </div>
       </div>
       <div class="form-group">
-        <label for="email">Email</label>
+        <label for="category">Category</label><br/>
+        <select name="category" ng-model="form.category">
+          <option *ngFor="let category of categories" [ngValue]="category.id">{{category.name}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
         <input
-          type="email"
+          type="text"
           class="form-control"
-          name="email"
-          [(ngModel)]="form.email"
+          name="price"
+          [(ngModel)]="form.price"
           required
-          email
-          #email="ngModel"
+          maxlength="100"
+          #price="ngModel"
         />
-        <div class="alert-danger" *ngIf="f.submitted && email.invalid">
-          <div *ngIf="email.errors.required">Email is required</div>
-          <div *ngIf="email.errors.email">
-            Email must be a valid email address
+        <div class="alert-danger" *ngIf="f.submitted && price.invalid">
+          <div *ngIf="price.errors.required">Price is required</div>
+          <div *ngIf="price.errors.maxlength">
+            Name must be at most 100 characters
           </div>
         </div>
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
+        <label for="description">Description</label>
         <input
-          type="password"
+          type="text"
           class="form-control"
-          name="password"
-          [(ngModel)]="form.password"
+          name="description"
+          [(ngModel)]="form.description"
           required
-          minlength="6"
-          #password="ngModel"
+          maxlength="300"
+          #description="ngModel"
         />
-        <div class="alert-danger" *ngIf="f.submitted && password.invalid">
-          <div *ngIf="password.errors.required">Password is required</div>
-          <div *ngIf="password.errors.minlength">
-            Password must be at least 6 characters
+        <div class="alert-danger" *ngIf="f.submitted && description.invalid">
+          <div *ngIf="description.errors.required">Description is required</div>
+          <div *ngIf="description.errors.maxlength">
+            Description must be at most 300 characters
           </div>
         </div>
       </div>
       <div class="form-group">
-        <button class="btn btn-primary btn-block">Sign Up</button>
+        <button class="btn btn-primary btn-block">Create</button>
       </div>
 
       <div class="alert alert-warning" *ngIf="f.submitted">
-        Signup failed!<br />{{ errorMessage }}
+        Creation failed!<br />{{ errorMessage }}
       </div>
     </form>
 
     <div class="alert alert-success" *ngIf="isSuccessful">
-      Your registration is successful!
+      Product created successful!
     </div>
   </div>
 </div>

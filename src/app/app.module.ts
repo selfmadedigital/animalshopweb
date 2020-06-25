@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserFormComponent } from './user-form/user-form.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {UserService} from './services/user.service';
@@ -14,11 +13,12 @@ import { OrderListComponent } from './order-list/order-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductManagmentComponent } from './product-managment/product-managment.component';
 import {APP_BASE_HREF} from '@angular/common';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import {authInterceptorProviders} from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserFormComponent,
     ProductListComponent,
     LoginComponent,
     RegisterComponent,
@@ -32,7 +32,7 @@ import {APP_BASE_HREF} from '@angular/common';
     HttpClientModule,
     FormsModule
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/'}, UserService],
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}, UserService, authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

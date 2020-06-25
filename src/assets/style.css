@@ -246,9 +246,7 @@ a:hover, a:focus, a.active {
     position: relative; }
     #nav ul li:first-child {
       margin: 0; }
-    #nav ul li:hover {
-      padding-bottom: 30px;
-      margin-bottom: -30px; }
+
       #nav ul li:hover .dropdown {
         opacity: 1;
         visibility: visible; }
@@ -2676,3 +2674,11 @@ a:hover, a:focus, a.active {
     padding: 50px 0; }
     #footer .insta-list {
       margin: 0 0 20px; } }
+
+#app>.container{
+  margin-top: 10px;
+}
+
+.form-control{
+  background-color: #fff;
+}

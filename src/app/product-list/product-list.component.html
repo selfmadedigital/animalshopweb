@@ -10,9 +10,9 @@
       </thead>
       <tbody>
       <tr *ngFor="let product of products">
-        <td><a href="{{'products/' + product.id}}">{{ product.id }}</a></td>
+        <td><a href="{{'product-detail?id=' + product.id}}">{{ product.id }}</a></td>
         <td>{{ product.name }}</td>
-        <td>{{ product.price }}</td>
+        <td>{{ product.price }} &euro;</td>
       </tr>
       </tbody>
     </table>
